@@ -1,0 +1,14 @@
+main { max-width: 1000px; margin: 0 auto; padding: 24px 16px; }
+h1 { margin: 0 0 16px; }
+.new-task { display: flex; gap: 8px; margin-bottom: 16px; }
+.new-task input { flex: 1; padding: 8px 10px; font-size: 15px; border: 1px solid #d0d7de; border-radius: 6px; }
+button { padding: 6px 10px; border: 1px solid #d0d7de; border-radius: 6px; background: #fff; cursor: pointer; }
+button:disabled { opacity: 0.5; cursor: default; }
+button.danger { color: #cf222e; }
+.error { color: #cf222e; }
+.board { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+.column { background: #eaeef2; border-radius: 8px; padding: 12px; min-height: 120px; }
+.column h2 { font-size: 14px; text-transform: uppercase; color: #57606a; margin: 0 0 8px; }
+.card { background: #fff; border-radius: 6px; padding: 10px; margin-bottom: 8px; box-shadow: 0 1px 2px rgb(0 0 0 / 0.08); }
+.actions { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 8px; }
+.actions button { font-size: 12px; padding: 3px 6px; }

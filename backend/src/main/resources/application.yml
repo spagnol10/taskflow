@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: taskflow
+  # Default: in-memory H2 in PostgreSQL mode, so the app runs without Docker.
+  datasource:
+    url: jdbc:h2:mem:taskflow;MODE=PostgreSQL;DATABASE_TO_LOWER=TRUE;DEFAULT_NULL_ORDERING=HIGH
+    username: sa
+    password:
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate # schema is owned by Flyway, never by Hibernate
+  h2:
+    console:
+      enabled: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+
+---
+# Real database: run with SPRING_PROFILES_ACTIVE=postgres (see docker-compose.yml)
+spring:
+  config:
+    activate:
+      on-profile: postgres
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/taskflow}
+    username: ${DB_USER:taskflow}
+    password: ${DB_PASSWORD:taskflow}
+  h2:
+    console:
+      enabled: false
