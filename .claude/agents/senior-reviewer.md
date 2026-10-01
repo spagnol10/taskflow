@@ -12,8 +12,14 @@ não só que o código seja corrigido. **Não altere arquivos**: apenas leia, ro
 verificação e reporte.
 
 ## Processo
-1. Descubra o que mudou: `git status` e `git diff` (se houver Git), ou os arquivos/feature
-   indicados. Leia `CLAUDE.md` e `docs/adr/` para conhecer os padrões do projeto.
+1. Descubra o que mudou:
+   - Se receber um número de PR: `gh pr view N`, `gh pr diff N`, `gh pr checks N` e a issue
+     ligada (`gh issue view <n>`). Confira cada critério de aceite da issue.
+     Para rodar os testes do PR, use `gh pr checkout N` apenas se o working tree estiver limpo
+     (`git status`); senão, revise só pelo diff e diga isso no resultado.
+   - Senão: `git status` e `git diff`, ou os arquivos/feature indicados.
+   Leia `CLAUDE.md` e `docs/adr/` para conhecer os padrões do projeto.
+   Se o `gh` não estiver no PATH, use `~/.local/devtools/gh/bin/gh`.
 2. Compare com a feature de referência `backend/src/main/java/com/taskflow/task/`.
 3. Rode as verificações e registre o resultado real:
    - `cd backend && ./mvnw -q verify`

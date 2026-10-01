@@ -11,6 +11,16 @@ este app para evoluir para o nível sênior. **O objetivo é o aprendizado dele,
 - Sempre explique o **porquê** de uma decisão e os trade-offs, não só o "como".
 - O roteiro de evolução está em `ROADMAP.md`. O diário de aprendizado fica em `docs/journal/`.
 - Use `/mentor` para sessões de mentoria e o agente `senior-reviewer` para code review.
+- O projeto simula um time real no GitHub (`/techlead`): sprints de 1 semana (milestones),
+  issues, quadro no GitHub Projects e pull requests revisados pela Tech Lead (Marina).
+
+## Fluxo de trabalho (como numa empresa)
+- Todo trabalho começa numa issue. Nunca commitar direto na `main`.
+- Branch por issue: `feat/<n>-slug`, `fix/<n>-slug`, `chore/<n>-slug`.
+- Commits em Conventional Commits (`feat:`, `fix:`, `test:`, `refactor:`, `docs:`, `chore:`).
+- PR com o template de `.github/pull_request_template.md` e `Closes #<n>`.
+  Merge (squash) só depois do review aprovado e do CI verde.
+- GitHub CLI: `gh` (instalado em `~/.local/devtools/gh/bin`).
 
 ## Stack
 - Backend: Java 21, Spring Boot 4.1, Spring Data JPA, Bean Validation, Flyway, Actuator
